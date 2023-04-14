@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head") %>
+<body>
+    <!-- layout -->
+    <div class="container pt-5">
+        <div class="card text-white bg-dark">
+            <div class="card-body">
+                <form action="/delete" method="post">
+                    <h1 class="card-title mb-4">Are you sure?</h1>
+                    <input type="hidden" name="id" value="<%= contact._id %>">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="submit" name="action" value="no" class="btn btn-danger"><i class="bi bi-hand-thumbs-down-fill"></i> No</button>
+                        <button type="submit" name="action" value="delete" class="btn btn-success"><i class="bi bi-hand-thumbs-up-fill"></i> Yes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <%- include("./partials/footer") %>
+</body>
+</html>

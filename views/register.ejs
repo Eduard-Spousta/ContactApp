@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head") %>
+<body>
+    <!-- layout -->
+    <div class="container pt-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-11 col-md-7 col-lg-6 col-xl-5">
+                <!-- card -->
+                <div class="card bg-dark text-white rounded" style="border-radius: 20px;">
+                    <div class="card-body p-5 text-center">
+                        <div class="pb-5 ps-1">
+                            <form action="/register" method="post">
+                                <h1 class="fw-bold mb-2 text-uppercase pb-3">Sign up</h1>
+
+                                <!-- ERROR MESSAGE -->
+                                <% if (typeof error !== 'undefined') { %>
+                                    <p class="text-white-50 mb-5"><%= error %></p>
+                                <% } %>
+                                <p class="text-white-50 mb-5">Please enter your data!</p>
+                        
+                                <div class="form-outline form-white mb-4">
+                                    <input type="text" name="username" id="typeEmailX" class="form-control form-control-lg" placeholder="username" minlength="5" required/>
+                                </div>
+        
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" name="email" id="typeEmailX" class="form-control form-control-lg" placeholder="example@email.com" minlength="6" required/>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <input type="password" name="password" id="typePasswordX" class="form-control form-control-lg" placeholder="password" minlength="5" required/>
+                                </div>
+
+                                <button class="btn btn-lg btn-outline-light px-5" type="submit">Login</button>
+                            </form>
+                        </div>
+                        <p>Already have an account? <a href="/login" class="text-white-50 fw-bold">Log in</a></p>
+                        <p><a href="/" class="text-white-50 fw-bold">Return home</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <%- include("./partials/footer") %>
+</body>
+</html>

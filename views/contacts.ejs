@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- head -->
+    <%- include("./partials/head") %>
+<body>
+
+    <!-- nav -->
+    <%- include("./partials/navLogged") %>
+    
+    <div class="container-sm pt-4">
+        <h1>Hi, <span style="text-transform: uppercase"><%= ownerName %></span> !</h1> 
+
+        <div class="d-flex justify-content-between align-items-center pt-4 pb-4">
+          <h3 class="m-0">My Contacts</h3>
+          <button type="button" class="btn btn-secondary">
+            <a href="/create" class="text-white fw-bold" style="text-decoration:none; font-size: 16px;">Create new</a>
+          </button>
+        </div>
+        
+        
+
+        <!-- each contact -->
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Tel</th>
+                <th scope="col">Adress</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% contacts.forEach(function(contact) { %>
+                <tr>
+                  <td><%= contact.name %></td>
+                  <td><%= contact.surname %></td>
+                  <td><%= contact.email %></td>
+                  <td><%= contact.tel %></td>
+                  <td><%= contact.address %></td>
+                  <!--<td><button type="button" class="btn btn-warning"><i class="bi bi-pen"></i></button></td> -->
+                  <td>
+                    <form action="/editReq" method="POST">
+                      <input type="hidden" name="contactId" value="<%= contact._id %>">
+                      <button type="submit" class="btn btn-warning"><i class="bi bi-pen"></i></button>
+                    </form>
+                  </td>
+
+                  <td>
+                    <form action="/deleteReq" method="POST">
+                      <input type="hidden" name="contactId" value="<%= contact._id %>">
+                      <button type="submit" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+                    </form>
+                  </td>
+                  
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+          
+    </div>
+
+
+    <!-- footer -->
+    <%- include("./partials/footer") %>
+
+</body>
+</html>
