@@ -1,7 +1,7 @@
 # ContactApp
 
-### Setup Database
-Project: FIM UHK, TNPW2
+### UNIVERSITY PROJECT
+FIM UHK, TNPW2
 
 ### Setup Database
 
