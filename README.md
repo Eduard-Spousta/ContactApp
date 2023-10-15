@@ -1,6 +1,9 @@
 # ContactApp
 
 ### Setup Database
+Project: FIM UHK, TNPW2
+
+### Setup Database
 
 Software requirements: `mongoDB comunity server, MongoDB Compass (optional but recomended)`
 Aviable at: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/, https://www.mongodb.com/try/download/compass
